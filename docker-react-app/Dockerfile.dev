@@ -1,6 +1,6 @@
 FROM node:alpine
 
-ENV CHOKIDAR_USEPOLLING=true
+ENV WATCHPACK_POLLING=true
 
 WORKDIR /usr/src/app
 

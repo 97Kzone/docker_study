@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          97kzone ttt
+          97kzone
         </a>
       </header>
     </div>
