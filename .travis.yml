@@ -13,6 +13,7 @@ scripts:
   - docker run -e CI=true 97kzone/docker-react-app npm run test -- ---coverage
 
 deploy:
+  edge: true
   provider: elasticbeanstalk
   region: "us-west-1"
   app: "docker-react-app"
