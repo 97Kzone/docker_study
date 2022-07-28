@@ -27,16 +27,3 @@ services:
       MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
       MYSQL_DATABASE: $MYSQL_DATABASE
       MYSQL_PORT: $MYSQL_PORT   
-
-  # mysql:
-  #   build: ./mysql
-  #   restart: unless-stopped
-  #   container_name: app_mysql
-  #   ports:
-  #     - "3310:3310"
-  #   volumes:
-  #     - ./mysql/mysql_data:/var/lib/mysql
-  #     - ./mysql/sqls/:/docker-entrypoint-initdb.d/
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: 1234
-  #     MYSQL_DATABASE: myapp
