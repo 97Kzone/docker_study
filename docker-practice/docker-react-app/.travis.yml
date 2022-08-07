@@ -1,0 +1,26 @@
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - echo "start creating an image with dockerfile"
+  - docker build -t 97kzone/docker-react-app -f Dockerfile.dev .
+
+script: 
+  - docker run -e CI=true 97kzone/docker-react-app npm run test -- --coverage
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: us-west-1
+  app: docker-react-app
+  env: Dockerreactapp-env-1
+  bucket_name: elasticbeanstalk-us-west-1-541561741469
+  bucket_path: docker-react-app
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
