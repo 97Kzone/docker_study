@@ -1,0 +1,13 @@
+FROM node:16-alpine
+
+ENV WATCHPACK_POLLING=true
+
+WORKDIR /app
+
+COPY package.json ./
+
+RUN npm install
+
+COPY ./ ./
+
+CMD [ "npm", "run", "start" ]
